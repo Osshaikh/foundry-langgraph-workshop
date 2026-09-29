@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+requiredVersions:
+  azd: '>=1.27.1'
+  extensions:
+    azure.ai.agents: '>=1.0.0-beta.9'
+name: lgws-m15-capstone
+services:
+  lgws-m15-capstone:
+    host: azure.ai.agent
+    project: src/capstone-agent
+    language: python
+    kind: hosted
+    name: lgws-m15-capstone
+    displayName: M15 Contoso Outdoor Concierge
+    description: >-
+      Capstone LangGraph hosted agent: grounded RAG, Foundry Toolbox tools, order tools,
+      human approval for refunds, durable checkpoints, input guardrail and GenAI tracing.
+    codeConfiguration:
+      runtime: python_3_13
+      entryPoint: '-m langchain_azure_ai.agents.hosting.run --protocol responses'
+    startupCommand: python -m langchain_azure_ai.agents.hosting.run --protocol responses
+    protocols:
+      - protocol: responses
+        version: 2.0.0
+    env:
+      AZURE_AI_MODEL_DEPLOYMENT_NAME: ${AZURE_AI_MODEL_DEPLOYMENT_NAME}
+      AZURE_AI_EMBEDDING_DEPLOYMENT_NAME: ${AZURE_AI_EMBEDDING_DEPLOYMENT_NAME}
+      SEARCH_ENDPOINT: ${SEARCH_ENDPOINT}
+      SEARCH_INDEX: ${SEARCH_INDEX}
+      TOOLBOX_NAME: ${TOOLBOX_NAME}
+      ENABLE_TRACING: 'true'
+      OTEL_AUTO_CONFIGURE_AZURE_MONITOR: 'true'
+      AZURE_TRACING_GEN_AI_CONTENT_RECORDING_ENABLED: 'true'
+    container:
+      resources:
+        cpu: '0.5'
+        memory: 1Gi

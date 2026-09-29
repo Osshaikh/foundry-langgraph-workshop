@@ -1,0 +1,99 @@
+site_name: "Microsoft Foundry: LangGraph Hosted Agents Workshop"
+site_description: >-
+  A hands-on, end-to-end workshop: build agents with LangGraph and run them as
+  Microsoft Foundry Hosted Agents — tools, RAG, MCP, memory, multi-agent,
+  evaluation, tracing, guardrails, red teaming, human-in-the-loop and fine-tuning.
+site_url: ""
+repo_name: "foundry-langgraph-workshop"
+repo_url: ""
+edit_uri: ""
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.indexes
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - search.highlight
+    - search.suggest
+
+plugins:
+  - search
+  - mkdocs-jupyter:
+      include_source: true   # "Download notebook" link on every lab
+      execute: false         # render the saved (validated) outputs
+      ignore_h1_titles: true
+      include: ["*.ipynb"]
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Setup: setup.md
+  - Concepts: concepts.md
+  - Platform:
+      - "Hosted agents": platform/01-hosted-agents.md
+      - "LangGraph on Foundry": platform/02-langgraph-on-foundry.md
+      - "azd lifecycle, identity & RBAC": platform/03-azd-lifecycle-identity-rbac.md
+      - "Toolbox & MCP": platform/04-toolbox-and-mcp.md
+  - Labs:
+      - "M0 · Preflight": modules/00-preflight.ipynb
+      - "M1 · First Inference": modules/01-first-inference.ipynb
+      - "M2 · First Hosted Agent": modules/02-first-hosted-agent.ipynb
+      - "M3 · Tools & Function Calling": modules/03-tools-and-function-calling.ipynb
+      - "M4 · Grounding / RAG": modules/04-grounding-rag.ipynb
+      - "M5 · MCP via Foundry Toolbox": modules/05-toolbox-mcp.ipynb
+      - "M6 · Agent Memory": modules/06-agent-memory.ipynb
+      - "M7 · Multi-Agent Orchestration": modules/07-multi-agent.ipynb
+      - "M8 · Deep Research": modules/08-deep-research.ipynb
+      - "M9 · Evaluation": modules/09-evaluation.ipynb
+      - "M10 · Observability & Tracing": modules/10-observability.ipynb
+      - "M11 · Guardrails": modules/11-guardrails.ipynb
+      - "M12 · Red Teaming": modules/12-red-teaming.ipynb
+      - "M13 · Human-in-the-Loop & REST": modules/13-hitl-and-rest.ipynb
+      - "M14 · Fine-Tuning & Distillation": modules/14-fine-tuning.ipynb
+      - "M15 · Capstone": modules/15-capstone.ipynb
+  - Troubleshooting: troubleshooting.md
+  - Validation report: validation.md

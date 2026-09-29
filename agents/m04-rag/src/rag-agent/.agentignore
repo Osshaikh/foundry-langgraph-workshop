@@ -1,0 +1,9 @@
+# Files excluded from the code-deploy ZIP (gitignore syntax).
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+.pytest_cache/
+.mypy_cache/
+*.log
