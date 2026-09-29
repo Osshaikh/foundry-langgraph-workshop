@@ -74,7 +74,7 @@ The key setting is `azd config set auth.useAzCliAuth true`; it makes `azd` reuse
 ## 3. Get the code
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/Osshaikh/foundry-langgraph-workshop.git
 cd foundry-langgraph-workshop
 uv sync --extra docs
 uv run python -m ipykernel install --user --name foundry-langgraph-workshop --display-name "Foundry LangGraph Workshop"

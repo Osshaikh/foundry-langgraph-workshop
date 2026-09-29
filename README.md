@@ -14,7 +14,7 @@ release. See [`validation/validation-report.md`](validation/validation-report.md
 ./scripts/install-tools.ps1
 
 # 2. Code + Python environment
-git clone <this-repo-url> foundry-langgraph-workshop
+git clone https://github.com/Osshaikh/foundry-langgraph-workshop.git
 cd foundry-langgraph-workshop
 uv sync --extra docs
 uv run python -m ipykernel install --user --name foundry-langgraph-workshop --display-name "Foundry LangGraph Workshop"
@@ -40,12 +40,15 @@ Full instructions: [`docs/setup.md`](docs/setup.md). Clean up afterwards with `.
 | `infra/` | Bicep for the lab environment (Foundry, models, AI Search, App Insights, ACR, RBAC, RAI policy) |
 | `scripts/` | `install-tools`, `provision`, `preflight`, `teardown`, notebook generators, `validate.py` |
 
-## Build the site
+## Build and publish the site
 
 ```bash
-uv run mkdocs serve        # http://127.0.0.1:8000
-uv run mkdocs build --strict
+uv run mkdocs serve             # preview at http://127.0.0.1:8000
+uv run mkdocs build --strict    # check for broken links/pages
+uv run mkdocs gh-deploy --force # build locally and push to the gh-pages branch (GitHub Pages)
 ```
+
+Live site: https://osshaikh.github.io/foundry-langgraph-workshop/
 
 ## Maintainers: regenerate and re-validate labs
 

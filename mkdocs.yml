@@ -3,10 +3,10 @@ site_description: >-
   A hands-on, end-to-end workshop: build agents with LangGraph and run them as
   Microsoft Foundry Hosted Agents — tools, RAG, MCP, memory, multi-agent,
   evaluation, tracing, guardrails, red teaming, human-in-the-loop and fine-tuning.
-site_url: ""
-repo_name: "foundry-langgraph-workshop"
-repo_url: ""
-edit_uri: ""
+site_url: "https://osshaikh.github.io/foundry-langgraph-workshop/"
+repo_name: "Osshaikh/foundry-langgraph-workshop"
+repo_url: "https://github.com/Osshaikh/foundry-langgraph-workshop"
+edit_uri: "edit/main/docs/"
 
 theme:
   name: material
