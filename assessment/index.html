@@ -1316,15 +1316,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-d-practical-challenge" class="md-nav__link">
+  <a href="#practical-challenge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Part D: practical challenge
+        Practical challenge
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Part D: practical challenge">
+    <nav class="md-nav" aria-label="Practical challenge">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1476,15 +1476,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-d-practical-challenge" class="md-nav__link">
+  <a href="#practical-challenge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Part D: practical challenge
+        Practical challenge
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Part D: practical challenge">
+    <nav class="md-nav" aria-label="Practical challenge">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1559,13 +1559,13 @@ production-shaped agents on Microsoft Foundry. It has two parts:</p>
 </thead>
 <tbody>
 <tr>
-<td><strong>Knowledge test</strong> (Parts A–C)</td>
-<td>60 questions in Microsoft Forms, closed book</td>
-<td>75 min</td>
-<td>Theory, framework/SDK architecture, applied engineering judgement</td>
+<td><strong>Knowledge test</strong> (Parts A–E)</td>
+<td>75 questions in Microsoft Forms, closed book</td>
+<td>90 min</td>
+<td>Theory, framework/SDK architecture, performance &amp; scale, observability &amp; governance, applied engineering judgement</td>
 </tr>
 <tr>
-<td><strong>Practical challenge</strong> (Part D)</td>
+<td><strong>Practical challenge</strong></td>
 <td>Build and deploy an agent in your lab environment, open book</td>
 <td>90 min</td>
 <td>Hands-on implementation</td>
@@ -1590,25 +1590,38 @@ production-shaped agents on Microsoft Foundry. It has two parts:</p>
 <tr>
 <td><strong>A</strong></td>
 <td>AI theory &amp; concepts</td>
-<td>Tokens &amp; context windows · sampling/temperature · embeddings, vectors &amp; similarity · chunking, hybrid search &amp; semantic ranking · hallucination &amp; grounding · RAG vs fine-tuning · fine-tuning, distillation &amp; overfitting · latency · prompt injection · LLM-as-judge evaluation</td>
-<td>M1, M4, M9, M14</td>
+<td>Tokens &amp; context windows · sampling/temperature · embeddings, vectors &amp; similarity · chunking, hybrid search &amp; semantic ranking · hallucination &amp; grounding · RAG vs fine-tuning · fine-tuning, distillation &amp; overfitting</td>
+<td>M1, M4, M14</td>
 </tr>
 <tr>
 <td><strong>B</strong></td>
-<td>Agent frameworks, SDK &amp; Foundry architecture</td>
-<td>Function calling &amp; ReAct · LangGraph nodes/edges/state, checkpointers, <code>interrupt()</code> · hosted agents, sessions, versions · Responses vs Invocations protocols · agent identity &amp; RBAC · Toolbox &amp; MCP · multi-agent and deep-agent patterns</td>
-<td>M2, M3, M5, M6, M7, M8, M13</td>
+<td>Agent frameworks &amp; hosted-agent architecture</td>
+<td>Function calling · LangGraph nodes/edges/state, reducers, checkpointers vs stores, <code>interrupt()</code>, supervisor routing · Microsoft Agent Framework executors &amp; workflows, supersteps, middleware, request/response human-in-the-loop, orchestration patterns (sequential, concurrent, handoff, group chat, Magentic) · hosted agents (any framework), Responses vs Invocations · Toolbox &amp; MCP</td>
+<td>M2, M3, M5, M6, M7, M8 + <a href="https://learn.microsoft.com/agent-framework/">Agent Framework docs</a></td>
 </tr>
 <tr>
 <td><strong>C</strong></td>
+<td>Performance, caching &amp; scale</td>
+<td>Prompt caching (prefix rules, <code>cached_tokens</code>) · semantic caching (thresholds, TTL, partitioning) · latency drivers, streaming &amp; parallel tool calls · cold starts · RAG over millions of documents (HNSW vs exhaustive KNN, quantization, dimension truncation, filters) · NL2SQL over very large schemas · model routing, reasoning effort, provisioned throughput · context-window management</td>
+<td>M1, M4, M6, M7, M8, M14 + <a href="https://learn.microsoft.com/azure/foundry/openai/how-to/prompt-caching">prompt caching</a></td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>Observability, safety &amp; governance</td>
+<td>End-to-end GenAI tracing (spans, tool arguments, decisions) · trace propagation across agents · content recording &amp; sensitive data · continuous evaluation in production · LLM-as-judge · guardrail intervention points (input, tool call, tool response, output) · PII protection · data residency (Global / DataZone / Regional) · egress controls &amp; least privilege · tool approval · Defender for Cloud AI alerts · red teaming</td>
+<td>M9, M10, M11, M12, M15 + <a href="https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview">Foundry guardrails</a></td>
+</tr>
+<tr>
+<td><strong>E</strong></td>
 <td>Applied agent engineering</td>
-<td>Reading tool and client code · debugging deploys and config · conversation state · RAG quality · latency and cost optimization · fine-tuning workflow · evaluation &amp; evaluators · tracing · layered safety &amp; red-team results · memory design · human-approval flows</td>
+<td>Reading tool and client code · debugging deploys and config · conversation state · RAG quality · identity &amp; RBAC · fine-tuning workflow · evaluation &amp; evaluators · memory design · human-approval flows · versioning</td>
 <td>M2–M15</td>
 </tr>
 </tbody>
 </table>
-<p>Each part has 20 questions worth 1 point each. Questions marked <strong>(Select ALL that apply)</strong> score only when
-you choose every correct option and no incorrect ones.</p>
+<p>Each part has 15 questions worth 1 point each. Questions marked <strong>(Select ALL that apply)</strong> score only when
+you choose every correct option and no incorrect ones. All agent questions assume <strong>hosted agents</strong>, whether
+built with LangGraph or Microsoft Agent Framework.</p>
 <h2 id="scoring-and-results">Scoring and results<a class="headerlink" href="#scoring-and-results" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1641,9 +1654,9 @@ you choose every correct option and no incorrect ones.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Pass</strong> = at least <strong>70% overall</strong> and <strong>50% in each of Parts A, B and C</strong>, plus <strong>12/18</strong> on the practical challenge
+<p><strong>Pass</strong> = at least <strong>70% overall</strong> and <strong>50% in each of Parts A to E</strong>, plus <strong>12/18</strong> on the practical challenge
 (if your cohort runs it). Your result lists the labs to revisit for the topics you missed.</p>
-<h2 id="part-d-practical-challenge">Part D: practical challenge<a class="headerlink" href="#part-d-practical-challenge" title="Permanent link">&para;</a></h2>
+<h2 id="practical-challenge">Practical challenge<a class="headerlink" href="#practical-challenge" title="Permanent link">&para;</a></h2>
 <p>Build <strong>"Trail Gear Assistant"</strong>, a hosted LangGraph agent for Contoso Outdoor, in your own lab project.
 You may use the workshop site, your lab notebooks and the <code>agents/</code> folder (especially <code>m15-capstone</code>) as
 references. Name the agent <strong><code>lgws-assess-&lt;your-alias&gt;</code></strong>.</p>
