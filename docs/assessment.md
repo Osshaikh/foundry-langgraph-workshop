@@ -37,6 +37,19 @@ built with LangGraph or Microsoft Agent Framework.
 **Pass** = at least **70% overall** and **50% in each of Parts A to E**, plus **12/18** on the practical challenge
 (if your cohort runs it). Your result lists the labs to revisit for the topics you missed.
 
+### How you get your results
+
+After you submit, Forms confirms your answers were received but doesn't show a score. Your instructor grades
+the cohort and emails you a **personal results report** (PDF) with:
+
+- your score out of 75, your band, and whether you passed (and if not, exactly which requirement was missed)
+- your score in each part against the 50% minimum, plus the practical challenge score if your cohort ran it
+- the topics where you scored below 60%, each linked to the lab or documentation to revisit
+- your strengths: topics where every answer was correct
+
+Individual questions and correct answers are not shared, so the test stays fair for future participants.
+Ask your instructor if you'd like to talk through a topic.
+
 ## Practical challenge
 
 Build **"Trail Gear Assistant"**, a hosted LangGraph agent for Contoso Outdoor, in your own lab project.
