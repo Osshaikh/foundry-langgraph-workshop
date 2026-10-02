@@ -328,6 +328,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../assessment/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Assessment
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../troubleshooting/" class="md-tabs__link">
         
   
@@ -1378,6 +1397,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../assessment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assessment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../troubleshooting/" class="md-nav__link">
         
   
@@ -1893,8 +1939,8 @@
 </tr>
 <tr>
 <td>Fine-tuning (M14)</td>
-<td style="text-align: right;">~$5–15 training + hourly hosting</td>
-<td>The fine-tuned <strong>deployment bills per hour</strong>. Delete it at the end of M14</td>
+<td style="text-align: right;">~$5–15 training + tokens</td>
+<td>The lab uses a <strong>Developer Tier</strong> deployment: no hosting fee, auto-deleted after 24 h. (Standard/Global FT deployments bill hourly.)</td>
 </tr>
 <tr>
 <td><strong>Typical total</strong></td>
@@ -1905,7 +1951,7 @@
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Delete when done</p>
-<p>Search, ACR and a fine-tuned deployment keep billing while they exist. <code>teardown</code> removes everything.</p>
+<p>Search and ACR keep billing while they exist (as would a Standard/Global fine-tuned deployment). <code>teardown</code> removes everything.</p>
 </div>
 <h2 id="5-verify">5. Verify<a class="headerlink" href="#5-verify" title="Permanent link">&para;</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Windows</label><label for="__tabbed_3_2">macOS / Linux</label></div>
@@ -1953,6 +1999,24 @@ cloud. Docker Desktop is only needed if you choose container-mode deploys.</p>
 <div class="admonition warning">
 <p class="admonition-title">403 or authorization errors</p>
 <p>Role assignments can take about 5 minutes to propagate. Wait, then run the preflight script again.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Lab machine is an Azure VM or Arc-enabled server</p>
+<p><code>DefaultAzureCredential</code> may pick up the machine's managed identity instead of your <code>az login</code>.
+Set it to use developer sign-ins only:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Windows</label><label for="__tabbed_5_2">macOS / Linux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="no">[Environment]</span><span class="p">::</span><span class="n">SetEnvironmentVariable</span><span class="p">(</span><span class="s2">"AZURE_TOKEN_CREDENTIALS"</span><span class="p">,</span> <span class="s2">"dev"</span><span class="p">,</span> <span class="s2">"User"</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">'export AZURE_TOKEN_CREDENTIALS=dev'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Restart VS Code afterwards. Hosted agents in Foundry are not affected.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Windows execution policy</p>

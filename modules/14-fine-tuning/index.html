@@ -328,6 +328,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../assessment/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Assessment
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../troubleshooting/" class="md-tabs__link">
         
   
@@ -1410,6 +1429,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../assessment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assessment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../troubleshooting/" class="md-nav__link">
         
   
@@ -2393,7 +2439,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <li>Upload JSONL files and create a Foundry fine-tuning job with an attach-to-existing-job path.</li>
 <li>Deploy the completed fine-tuned model as <code>gpt-4-1-mini-lgws-ft</code>.</li>
 <li>Swap the hosted LangGraph agent to the fine-tuned deployment and compare scores.</li>
-<li>Understand cost controls: fine-tuned deployments can bill hourly while deployed, so cleanup is explicit and guarded.</li>
+<li>Understand cost controls: the lab deploys on <strong>Developer Tier</strong> (no hourly hosting fee, pay per token, auto-deleted after <strong>24 hours</strong>). Standard/Global fine-tuned deployments <em>do</em> bill hourly, so cleanup is explicit and guarded.</li>
 </ul>
 <h2 id="fine-tuning-shape">Fine-tuning shape<a class="anchor-link" href="#fine-tuning-shape">¶</a></h2><table>
 <thead>
@@ -3094,7 +3140,7 @@ extra_prompts = []</div>
 
 <span class="n">DELETE_FT_DEPLOYMENT</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">state</span> <span class="o">=</span> <span class="n">load_state</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Fine-tuned deployments bill hourly while deployed."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Developer Tier deployments have no hosting fee and expire after 24 hours; Standard/Global ones bill hourly."</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Cleanup command:"</span><span class="p">,</span> <span class="n">show_delete_deployment_command</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"ft_deployment_name"</span><span class="p">,</span> <span class="s2">"gpt-4-1-mini-lgws-ft"</span><span class="p">)))</span>
 <span class="k">if</span> <span class="n">DELETE_FT_DEPLOYMENT</span> <span class="ow">and</span> <span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"ft_deployment_name"</span><span class="p">):</span>
     <span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
@@ -3108,7 +3154,7 @@ from workshop.azd import azd
 
 DELETE_FT_DEPLOYMENT = False
 state = load_state()
-print("Fine-tuned deployments bill hourly while deployed.")
+print("Developer Tier deployments have no hosting fee and expire after 24 hours; Standard/Global ones bill hourly.")
 print("Cleanup command:", show_delete_deployment_command(state.get("ft_deployment_name", "gpt-4-1-mini-lgws-ft")))
 if DELETE_FT_DEPLOYMENT and state.get("ft_deployment_name"):
     import subprocess
@@ -3158,7 +3204,7 @@ else:
 </tr>
 <tr>
 <td>Cost note</td>
-<td>Fine-tuned deployments can incur hourly hosting charges; guarded cleanup is included but not run</td>
+<td>Developer Tier: per-token only, expires after 24 h (redeploy the model to keep using it). Standard/Global FT deployments bill hourly; guarded cleanup is included</td>
 </tr>
 </tbody>
 </table>

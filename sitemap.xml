@@ -2,102 +2,106 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
+    </url>
+    <url>
+         <loc>https://osshaikh.github.io/foundry-langgraph-workshop/assessment/</loc>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/concepts/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/setup/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/troubleshooting/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/validation/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/modules/00-preflight/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/modules/01-first-inference/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/modules/02-first-hosted-agent/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/modules/03-tools-and-function-calling/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/modules/04-grounding-rag/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/modules/05-toolbox-mcp/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/modules/06-agent-memory/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/modules/07-multi-agent/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/modules/08-deep-research/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/modules/09-evaluation/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/modules/10-observability/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/modules/11-guardrails/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/modules/12-red-teaming/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/modules/13-hitl-and-rest/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/modules/14-fine-tuning/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/modules/15-capstone/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/platform/01-hosted-agents/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/platform/02-langgraph-on-foundry/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/platform/03-azd-lifecycle-identity-rbac/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
     <url>
          <loc>https://osshaikh.github.io/foundry-langgraph-workshop/platform/04-toolbox-and-mcp/</loc>
-         <lastmod>2026-09-29</lastmod>
+         <lastmod>2026-10-02</lastmod>
     </url>
 </urlset>
