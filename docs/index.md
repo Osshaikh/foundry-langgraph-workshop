@@ -90,7 +90,7 @@ This is a comfortable **two-day** workshop. For a single long day, treat M8, M12
 | **Day 1 PM**: Knowledge & tools | M4 · M5 · M6 · M7 |
 | **Day 2 AM**: Quality & safety | M14 *(submit the fine-tune job first!)* · M8 · M9 · M10 · M11 |
 | **Day 2 PM**: Hardening & capstone | M12 · M13 · M14 *(finish)* · M15 |
-| **After the workshop** | [Assessment](assessment.md): 75-min knowledge test + optional 90-min practical |
+| **After the workshop** | [Assessment](assessment.md): 90-min knowledge test + optional 90-min practical |
 
 !!! tip "Fine-tuning takes time"
     A fine-tuning job runs 30–120 minutes. Start **M14 §1–3** at the beginning of Day 2 so the job trains

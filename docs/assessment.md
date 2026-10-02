@@ -5,8 +5,8 @@ production-shaped agents on Microsoft Foundry. It has two parts:
 
 | Part | Format | Time | Measures |
 |---|---|---|---|
-| **Knowledge test** (Parts A–C) | 60 questions in Microsoft Forms, closed book | 75 min | Theory, framework/SDK architecture, applied engineering judgement |
-| **Practical challenge** (Part D) | Build and deploy an agent in your lab environment, open book | 90 min | Hands-on implementation |
+| **Knowledge test** (Parts A–E) | 75 questions in Microsoft Forms, closed book | 90 min | Theory, framework/SDK architecture, performance & scale, observability & governance, applied engineering judgement |
+| **Practical challenge** | Build and deploy an agent in your lab environment, open book | 90 min | Hands-on implementation |
 
 !!! info "Your instructor sends the knowledge-test link"
     The questions are not published on this site. Use the blueprint and practice questions below to prepare.
@@ -15,12 +15,15 @@ production-shaped agents on Microsoft Foundry. It has two parts:
 
 | Part | Skill domain | Topics | Labs to revise |
 |---|---|---|---|
-| **A** | AI theory & concepts | Tokens & context windows · sampling/temperature · embeddings, vectors & similarity · chunking, hybrid search & semantic ranking · hallucination & grounding · RAG vs fine-tuning · fine-tuning, distillation & overfitting · latency · prompt injection · LLM-as-judge evaluation | M1, M4, M9, M14 |
-| **B** | Agent frameworks, SDK & Foundry architecture | Function calling & ReAct · LangGraph nodes/edges/state, checkpointers, `interrupt()` · hosted agents, sessions, versions · Responses vs Invocations protocols · agent identity & RBAC · Toolbox & MCP · multi-agent and deep-agent patterns | M2, M3, M5, M6, M7, M8, M13 |
-| **C** | Applied agent engineering | Reading tool and client code · debugging deploys and config · conversation state · RAG quality · latency and cost optimization · fine-tuning workflow · evaluation & evaluators · tracing · layered safety & red-team results · memory design · human-approval flows | M2–M15 |
+| **A** | AI theory & concepts | Tokens & context windows · sampling/temperature · embeddings, vectors & similarity · chunking, hybrid search & semantic ranking · hallucination & grounding · RAG vs fine-tuning · fine-tuning, distillation & overfitting | M1, M4, M14 |
+| **B** | Agent frameworks & hosted-agent architecture | Function calling · LangGraph nodes/edges/state, reducers, checkpointers vs stores, `interrupt()`, supervisor routing · Microsoft Agent Framework executors & workflows, supersteps, middleware, request/response human-in-the-loop, orchestration patterns (sequential, concurrent, handoff, group chat, Magentic) · hosted agents (any framework), Responses vs Invocations · Toolbox & MCP | M2, M3, M5, M6, M7, M8 + [Agent Framework docs](https://learn.microsoft.com/agent-framework/) |
+| **C** | Performance, caching & scale | Prompt caching (prefix rules, `cached_tokens`) · semantic caching (thresholds, TTL, partitioning) · latency drivers, streaming & parallel tool calls · cold starts · RAG over millions of documents (HNSW vs exhaustive KNN, quantization, dimension truncation, filters) · NL2SQL over very large schemas · model routing, reasoning effort, provisioned throughput · context-window management | M1, M4, M6, M7, M8, M14 + [prompt caching](https://learn.microsoft.com/azure/foundry/openai/how-to/prompt-caching) |
+| **D** | Observability, safety & governance | End-to-end GenAI tracing (spans, tool arguments, decisions) · trace propagation across agents · content recording & sensitive data · continuous evaluation in production · LLM-as-judge · guardrail intervention points (input, tool call, tool response, output) · PII protection · data residency (Global / DataZone / Regional) · egress controls & least privilege · tool approval · Defender for Cloud AI alerts · red teaming | M9, M10, M11, M12, M15 + [Foundry guardrails](https://learn.microsoft.com/azure/foundry/guardrails/guardrails-overview) |
+| **E** | Applied agent engineering | Reading tool and client code · debugging deploys and config · conversation state · RAG quality · identity & RBAC · fine-tuning workflow · evaluation & evaluators · memory design · human-approval flows · versioning | M2–M15 |
 
-Each part has 20 questions worth 1 point each. Questions marked **(Select ALL that apply)** score only when
-you choose every correct option and no incorrect ones.
+Each part has 15 questions worth 1 point each. Questions marked **(Select ALL that apply)** score only when
+you choose every correct option and no incorrect ones. All agent questions assume **hosted agents**, whether
+built with LangGraph or Microsoft Agent Framework.
 
 ## Scoring and results
 
@@ -31,10 +34,10 @@ you choose every correct option and no incorrect ones.
 | **Developing** | 50–69% | Understands the basics; needs guided practice |
 | **Needs support** | < 50% | Revisit the labs before building on your own |
 
-**Pass** = at least **70% overall** and **50% in each of Parts A, B and C**, plus **12/18** on the practical challenge
+**Pass** = at least **70% overall** and **50% in each of Parts A to E**, plus **12/18** on the practical challenge
 (if your cohort runs it). Your result lists the labs to revisit for the topics you missed.
 
-## Part D: practical challenge
+## Practical challenge
 
 Build **"Trail Gear Assistant"**, a hosted LangGraph agent for Contoso Outdoor, in your own lab project.
 You may use the workshop site, your lab notebooks and the `agents/` folder (especially `m15-capstone`) as
