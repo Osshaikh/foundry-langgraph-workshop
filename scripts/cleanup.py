@@ -5,7 +5,7 @@
 
 Deletes: hosted agents, toolboxes and memory stores whose names start with LAB_PREFIX (default "lgws"),
 and Azure AI Search indexes with that prefix. Fine-tuned model deployments are listed but only deleted
-with --include-finetuned (they bill hourly while deployed).
+with --include-finetuned (Developer Tier ones expire after 24 h on their own; Standard/Global ones bill hourly).
 
 To remove EVERYTHING (resource group), use scripts/teardown.ps1 instead.
 """

@@ -95,5 +95,6 @@ nav:
       - "M13 · Human-in-the-Loop & REST": modules/13-hitl-and-rest.ipynb
       - "M14 · Fine-Tuning & Distillation": modules/14-fine-tuning.ipynb
       - "M15 · Capstone": modules/15-capstone.ipynb
+  - Assessment: assessment.md
   - Troubleshooting: troubleshooting.md
   - Validation report: validation.md

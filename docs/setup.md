@@ -130,11 +130,11 @@ Approximate list prices (USD, pay-as-you-go) for a two-day class. Verify current
 | Log Analytics + App Insights | < $1 / day | Pay per GB ingested; workshop traces are small |
 | Model tokens (all labs) | ~$2–10 per attendee | Pay per token; M8 deep research and M9/M12 evals use the most |
 | Hosted-agent sessions | < $1 per attendee | CPU + memory only while a session is active (0.5 vCPU / 1 GiB) |
-| Fine-tuning (M14) | ~$5–15 training + hourly hosting | The fine-tuned **deployment bills per hour**. Delete it at the end of M14 |
+| Fine-tuning (M14) | ~$5–15 training + tokens | The lab uses a **Developer Tier** deployment: no hosting fee, auto-deleted after 24 h. (Standard/Global FT deployments bill hourly.) |
 | **Typical total** | **~$15–30 per attendee** | Run **teardown** when the class ends |
 
 !!! warning "Delete when done"
-    Search, ACR and a fine-tuned deployment keep billing while they exist. `teardown` removes everything.
+    Search and ACR keep billing while they exist (as would a Standard/Global fine-tuned deployment). `teardown` removes everything.
 
 ## 5. Verify
 
@@ -183,6 +183,24 @@ The teardown deletes `rg-lgws-<alias>` and purges the soft-deleted Foundry accou
 
 !!! warning "403 or authorization errors"
     Role assignments can take about 5 minutes to propagate. Wait, then run the preflight script again.
+
+!!! warning "Lab machine is an Azure VM or Arc-enabled server"
+    `DefaultAzureCredential` may pick up the machine's managed identity instead of your `az login`.
+    Set it to use developer sign-ins only:
+
+    === "Windows"
+
+        ```powershell
+        [Environment]::SetEnvironmentVariable("AZURE_TOKEN_CREDENTIALS", "dev", "User")
+        ```
+
+    === "macOS / Linux"
+
+        ```bash
+        echo 'export AZURE_TOKEN_CREDENTIALS=dev' >> ~/.bashrc
+        ```
+
+    Restart VS Code afterwards. Hosted agents in Foundry are not affected.
 
 !!! warning "Windows execution policy"
     Run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`, then retry the PowerShell script.

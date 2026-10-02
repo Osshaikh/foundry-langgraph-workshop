@@ -16,7 +16,7 @@ nb.md("""
 - Upload JSONL files and create a Foundry fine-tuning job with an attach-to-existing-job path.
 - Deploy the completed fine-tuned model as `gpt-4-1-mini-lgws-ft`.
 - Swap the hosted LangGraph agent to the fine-tuned deployment and compare scores.
-- Understand cost controls: fine-tuned deployments can bill hourly while deployed, so cleanup is explicit and guarded.
+- Understand cost controls: the lab deploys on **Developer Tier** (no hourly hosting fee, pay per token, auto-deleted after **24 hours**). Standard/Global fine-tuned deployments *do* bill hourly, so cleanup is explicit and guarded.
 
 ## Fine-tuning shape
 
@@ -209,7 +209,7 @@ from workshop.azd import azd
 
 DELETE_FT_DEPLOYMENT = False
 state = load_state()
-print("Fine-tuned deployments bill hourly while deployed.")
+print("Developer Tier deployments have no hosting fee and expire after 24 hours; Standard/Global ones bill hourly.")
 print("Cleanup command:", show_delete_deployment_command(state.get("ft_deployment_name", "gpt-4-1-mini-lgws-ft")))
 if DELETE_FT_DEPLOYMENT and state.get("ft_deployment_name"):
     import subprocess
@@ -229,7 +229,7 @@ nb.md("""
 | Training type | Global Standard first, then Developer/default fallbacks if the API rejects it |
 | Deployment | `gpt-4-1-mini-lgws-ft` when the job succeeds |
 | Hosted agent | `lgws-m14-ft-agent` redeployed with `AZURE_AI_MODEL_DEPLOYMENT_NAME` set to the FT deployment |
-| Cost note | Fine-tuned deployments can incur hourly hosting charges; guarded cleanup is included but not run |
+| Cost note | Developer Tier: per-token only, expires after 24 h (redeploy the model to keep using it). Standard/Global FT deployments bill hourly; guarded cleanup is included |
 
 ➡️ Next: **M15 · Capstone** — combine HITL, evaluation, and deployment practices into one production-style agent.
 """)

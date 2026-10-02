@@ -8,6 +8,7 @@ Problems new engineers hit most often, with the fix for each. Most are covered b
 | Symptom | Cause | Fix |
 |---|---|---|
 | `DefaultAzureCredential failed to retrieve a token` / `CredentialUnavailableError` | Not signed in, or the token expired | `az login`, then restart the notebook kernel |
+| `ManagedIdentityCredential: Access is denied` (or a token for the wrong identity) on a lab **Azure VM / Arc-enabled** machine | `DefaultAzureCredential` tries the machine's managed identity before your `az login` | Set `AZURE_TOKEN_CREDENTIALS=dev` (user environment variable, or add it to `.env`), then restart VS Code. It limits local auth to developer credentials; hosted agents are unaffected |
 | `azd`: *You must be logged into Azure* / `AzureDeveloperCLICredential` error | azd isn't reusing the CLI login | `azd config set auth.useAzCliAuth true` then `azd auth login --check-status` |
 | `401 PermissionDenied … lacks the required data action` calling a model | Your user is missing **Foundry User** | Re-run `scripts/provision` (assigns roles), wait ~5 min for propagation |
 | `403` on `azd deploy` | Missing **Foundry Project Manager** on the project | As above |
